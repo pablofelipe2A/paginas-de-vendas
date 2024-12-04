@@ -15,6 +15,7 @@
         <input type="text" id="search-bar" placeholder="Buscar produtos..." oninput="buscarProduto()">
     </header>
 
+
     <main>
         <section class="produtos" id="produtos-lista">
             <!-- Produto 1 -->
@@ -25,6 +26,7 @@
                 <p class="preco">R$ 4.999,00</p>
             </div>
 
+
             <!-- Produto 2 -->
             <div class="produto" data-nome="iphone 13">
                 <img src="iphone13.jpg" alt="iPhone 13">
@@ -32,6 +34,7 @@
                 <p>Design moderno e desempenho incrível.</p>
                 <p class="preco">R$ 5.999,00</p>
             </div>
+
 
             <!-- Produto 3 -->
             <div class="produto" data-nome="smart tv samsung 58 4k">
@@ -41,6 +44,7 @@
                 <p class="preco">R$ 3.499,00</p>
             </div>
 
+
             <!-- Produto 4 -->
             <div class="produto" data-nome="pc gamer amd ryzen 5">
                 <img src="pcgamer.jpg" alt="PC Gamer AMD Ryzen">
@@ -48,6 +52,7 @@
                 <p>Desempenho de elite para jogos.</p>
                 <p class="preco">R$ 6.999,00</p>
             </div>
+
 
             <!-- Produto 5 -->
             <div class="produto" data-nome="liquidificador oster full">
@@ -57,6 +62,7 @@
                 <p class="preco">R$ 299,00</p>
             </div>
 
+
             <!-- Produto 6 -->
             <div class="produto" data-nome="notebook galaxy book4">
                 <img src="notebook.jpg" alt="Notebook Galaxy Book4">
@@ -65,6 +71,7 @@
                 <p class="preco">R$ 7.999,00</p>
             </div>
 
+
             <!-- Produto 7 -->
             <div class="produto" data-nome="mouse gamer fallen pantera">
                 <img src="mouse.jpg" alt="Mouse Gamer">
@@ -72,6 +79,7 @@
                 <p>Precisão e estilo com iluminação RGB.</p>
                 <p class="preco">R$ 199,00</p>
             </div>
+
 
             <!-- Produto 8 -->
             <div class="produto" data-nome="headset qcy h3 bluetooth">
@@ -83,10 +91,12 @@
         </section>
     </main>
 
+
     <script>
         function buscarProduto() {
             const searchInput = document.getElementById('search-bar').value.toLowerCase();
             const produtos = document.querySelectorAll('.produto');
+
 
             produtos.forEach(produto => {
                 const nomeProduto = produto.getAttribute('data-nome');

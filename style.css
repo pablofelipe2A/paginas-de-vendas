@@ -56,3 +56,27 @@ main {
     color: #4CAF50;
     margin-top: 10px;
 }
+
+.botao {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botao:hover {
+    background-color: #45a049;
+}
+
+.botao.comprar {
+    background-color: #007BFF;
+}
+
+.botao.comprar:hover {
+    background-color: #0056b3;
+}
