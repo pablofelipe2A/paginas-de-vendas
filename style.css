@@ -117,3 +117,23 @@ footer {
     text-align: center;
     z-index: 100;
 }
+/* Define o estilo para o corpo da página */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+/* O main ocupa o espaço disponível */
+main {
+    flex: 1;
+}
+
+/* Estilo para o footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
