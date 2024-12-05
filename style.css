@@ -80,3 +80,15 @@ main {
 .botao.comprar:hover {
     background-color: #0056b3;
 }
+
+.produtos {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.produto img {
+    max-height: 150px;
+    object-fit: contain;
+}
