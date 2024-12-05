@@ -61,6 +61,10 @@ nav .botao:hover {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    display: block; /* Para alinhar ao centro */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto;
+    margin-bottom: 10px; /* Espaçamento entre a imagem e o texto */
 }
 
 .produto h2 {
@@ -85,6 +89,10 @@ nav .botao:hover {
 .produto .botao {
     background-color: #4CAF50;
     color: white;
+    font-size: 1.1em; /* Aumentar tamanho da fonte */
+    padding: 15px 20px; /* Aumentar tamanho dos botões */
+    border-radius: 8px;
+    margin: 5px 0; /* Espaçamento entre os botões */
 }
 
 .produto .botao:hover {
