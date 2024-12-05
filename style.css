@@ -4,16 +4,24 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda a altura da tela */
 }
 
+/* Garantir que o main ocupa o espaço disponível */
 main {
+    flex: 1; /* Faz com que o main ocupe o restante do espaço */
     padding: 20px;
 }
 
-h2 {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 10px;
+/* Estilo do footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Empurra o footer para o final */
 }
 
 /* Estilo dos produtos */
@@ -104,36 +112,4 @@ h2 {
         width: 100%;
         margin: 10px 0;
     }
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    z-index: 100;
-}
-/* Define o estilo para o corpo da página */
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    margin: 0;
-}
-
-/* O main ocupa o espaço disponível */
-main {
-    flex: 1;
-}
-
-/* Estilo para o footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
 }
