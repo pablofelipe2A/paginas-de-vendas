@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS adicional para ajustar as imagens */
+        .produto img {
+            width: 100%; /* Imagem responsiva */
+            max-width: 250px; /* Limitar o tamanho máximo da imagem */
+            height: auto;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,7 +43,6 @@
         <section>
             <h2>Computadores</h2>
             <div class="produtos" id="computadores">
-                <!-- Produtos de computadores -->
                 <div class="produto" data-nome="pc gamer amd ryzen 5">
                     <img src="pcgamer.jpg" alt="PC Gamer AMD Ryzen">
                     <h2>PC Gamer AMD Ryzen 5</h2>
@@ -130,6 +148,10 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 tech nova. Todos os direitos reservados.</p>
+    </footer>
 
     <script>
         function buscarProduto() {
