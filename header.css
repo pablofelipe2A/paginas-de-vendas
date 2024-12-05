@@ -1,39 +1,53 @@
-/* Estilos para o cabeçalho */
+/* Estilo para o cabeçalho */
 header {
-    background-color: black;
+    text-align: center;
+    background-color: #4CAF50;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
 }
 
 header h1 {
-    font-size: 24px;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
 header p {
-    font-size: 16px;
-    margin: 5px 0 10px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 20%;
-}
-
-header input[type="text"] {
-    width: 150px;
-    padding: 8px;
-    border-radius: 4px;
+#search-bar {
+    width: 50%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
     border: 1px solid #ddd;
-    font-size: 14px;
-    background-color: white;
-    color: black;
+    outline: none;
+}
+
+#search-bar:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav .botao {
+    background-color: #fff;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav .botao:hover {
+    background-color: #4CAF50;
+    color: white;
 }
