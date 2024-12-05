@@ -15,88 +15,101 @@
         <input type="text" id="search-bar" placeholder="Buscar produtos..." oninput="buscarProduto()">
     </header>
 
-
     <main>
-        <section class="produtos" id="produtos-lista">
-            <!-- Produto 1 -->
-            <div class="produto" data-nome="samsung galaxy s24">
-                <img src="s24.jpg" alt="Samsung Galaxy S24">
-                <h2>Samsung Galaxy S24</h2>
-                <p>O mais novo smartphone da Samsung.</p>
-                <p class="preco">R$ 4.999,00</p>
+        <!-- Categoria: Celulares -->
+        <section>
+            <h2>Celulares</h2>
+            <div class="produtos" id="produtos-celulares">
+                <div class="produto" data-nome="samsung galaxy s24">
+                    <img src="s24.jpg" alt="Samsung Galaxy S24">
+                    <h2>Samsung Galaxy S24</h2>
+                    <p>O mais novo smartphone da Samsung.</p>
+                    <p class="preco">R$ 4.999,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Samsung Galaxy S24', 4999)">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprarAgora('Samsung Galaxy S24', 4999)">Comprar</button>
+                </div>
+
+                <div class="produto" data-nome="iphone 13">
+                    <img src="iphone13.jpg" alt="iPhone 13">
+                    <h2>iPhone 13</h2>
+                    <p>Design moderno e desempenho incrível.</p>
+                    <p class="preco">R$ 5.999,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('iPhone 13', 5999)">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprarAgora('iPhone 13', 5999)">Comprar</button>
+                </div>
             </div>
+        </section>
 
-
-            <!-- Produto 2 -->
-            <div class="produto" data-nome="iphone 13">
-                <img src="iphone13.jpg" alt="iPhone 13">
-                <h2>iPhone 13</h2>
-                <p>Design moderno e desempenho incrível.</p>
-                <p class="preco">R$ 5.999,00</p>
+        <!-- Categoria: Eletrônicos -->
+        <section>
+            <h2>Eletrônicos</h2>
+            <div class="produtos" id="produtos-eletronicos">
+                <div class="produto" data-nome="smart tv samsung 58 4k">
+                    <img src="tv4k.jpg" alt="Smart TV 58' 4K">
+                    <h2>Smart TV Samsung 58" 4K</h2>
+                    <p>Qualidade de imagem cristalina com 4K.</p>
+                    <p class="preco">R$ 3.499,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Smart TV Samsung 58" 4K', 3499)">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprarAgora('Smart TV Samsung 58" 4K', 3499)">Comprar</button>
+                </div>
             </div>
+        </section>
 
+        <!-- Categoria: Computadores -->
+        <section>
+            <h2>Computadores</h2>
+            <div class="produtos" id="produtos-computadores">
+                <div class="produto" data-nome="pc gamer amd ryzen 5">
+                    <img src="pcgamer.jpg" alt="PC Gamer AMD Ryzen">
+                    <h2>PC Gamer AMD Ryzen 5</h2>
+                    <p>Desempenho de elite para jogos.</p>
+                    <p class="preco">R$ 6.999,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('PC Gamer AMD Ryzen 5', 6999)">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprarAgora('PC Gamer AMD Ryzen 5', 6999)">Comprar</button>
+                </div>
 
-            <!-- Produto 3 -->
-            <div class="produto" data-nome="smart tv samsung 58 4k">
-                <img src="tv4k.jpg" alt="Smart TV 58' 4K">
-                <h2>Smart TV Samsung 58" 4K</h2>
-                <p>Qualidade de imagem cristalina com 4K.</p>
-                <p class="preco">R$ 3.499,00</p>
+                <div class="produto" data-nome="notebook galaxy book4">
+                    <img src="notebook.jpg" alt="Notebook Galaxy Book4">
+                    <h2>Notebook Galaxy Book4</h2>
+                    <p>Potência e portabilidade para o dia a dia.</p>
+                    <p class="preco">R$ 7.999,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Notebook Galaxy Book4', 7999)">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprarAgora('Notebook Galaxy Book4', 7999)">Comprar</button>
+                </div>
             </div>
+        </section>
 
+        <!-- Categoria: Acessórios -->
+        <section>
+            <h2>Acessórios</h2>
+            <div class="produtos" id="produtos-acessorios">
+                <div class="produto" data-nome="mouse gamer fallen pantera">
+                    <img src="mouse.jpg" alt="Mouse Gamer">
+                    <h2>Mouse Gamer Fallen Pantera</h2>
+                    <p>Precisão e estilo com iluminação RGB.</p>
+                    <p class="preco">R$ 199,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Mouse Gamer Fallen Pantera', 199)">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprarAgora('Mouse Gamer Fallen Pantera', 199)">Comprar</button>
+                </div>
 
-            <!-- Produto 4 -->
-            <div class="produto" data-nome="pc gamer amd ryzen 5">
-                <img src="pcgamer.jpg" alt="PC Gamer AMD Ryzen">
-                <h2>PC Gamer AMD Ryzen 5</h2>
-                <p>Desempenho de elite para jogos.</p>
-                <p class="preco">R$ 6.999,00</p>
-            </div>
-
-
-            <!-- Produto 5 -->
-            <div class="produto" data-nome="liquidificador oster full">
-                <img src="liquidificador.jpg" alt="Liquidificador Oster">
-                <h2>Liquidificador Oster Full</h2>
-                <p>Durabilidade e potência para sua cozinha.</p>
-                <p class="preco">R$ 299,00</p>
-            </div>
-
-
-            <!-- Produto 6 -->
-            <div class="produto" data-nome="notebook galaxy book4">
-                <img src="notebook.jpg" alt="Notebook Galaxy Book4">
-                <h2>Notebook Galaxy Book4</h2>
-                <p>Potência e portabilidade para o dia a dia.</p>
-                <p class="preco">R$ 7.999,00</p>
-            </div>
-
-
-            <!-- Produto 7 -->
-            <div class="produto" data-nome="mouse gamer fallen pantera">
-                <img src="mouse.jpg" alt="Mouse Gamer">
-                <h2>Mouse Gamer Fallen Pantera</h2>
-                <p>Precisão e estilo com iluminação RGB.</p>
-                <p class="preco">R$ 199,00</p>
-            </div>
-
-
-            <!-- Produto 8 -->
-            <div class="produto" data-nome="headset qcy h3 bluetooth">
-                <img src="headset.jpg" alt="Headset QCY H3">
-                <h2>Headset QCY H3 Bluetooth</h2>
-                <p>Som imersivo com cancelamento de ruído.</p>
-                <p class="preco">R$ 399,00</p>
+                <div class="produto" data-nome="headset qcy h3 bluetooth">
+                    <img src="headset.jpg" alt="Headset QCY H3">
+                    <h2>Headset QCY H3 Bluetooth</h2>
+                    <p>Som imersivo com cancelamento de ruído.</p>
+                    <p class="preco">R$ 399,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Headset QCY H3 Bluetooth', 399)">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprarAgora('Headset QCY H3 Bluetooth', 399)">Comprar</button>
+                </div>
             </div>
         </section>
     </main>
 
-
     <script>
+        let carrinho = [];
+
         function buscarProduto() {
             const searchInput = document.getElementById('search-bar').value.toLowerCase();
             const produtos = document.querySelectorAll('.produto');
-
 
             produtos.forEach(produto => {
                 const nomeProduto = produto.getAttribute('data-nome');
@@ -106,6 +119,15 @@
                     produto.style.display = 'none';
                 }
             });
+        }
+
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            alert(`${nome} foi adicionado ao carrinho.`);
+        }
+
+        function comprarAgora(nome, preco) {
+            alert(`Você comprou: ${nome} por R$ ${preco}`);
         }
     </script>
 </body>
