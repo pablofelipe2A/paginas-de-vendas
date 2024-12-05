@@ -16,97 +16,122 @@
     </header>
 
     <main>
-        <!-- Categoria: Celulares -->
-        <section>
-            <h2>Celulares</h2>
-            <div class="produtos" id="produtos-celulares">
-                <div class="produto" data-nome="samsung galaxy s24">
-                    <img src="s24.jpg" alt="Samsung Galaxy S24">
-                    <h2>Samsung Galaxy S24</h2>
-                    <p>O mais novo smartphone da Samsung.</p>
-                    <p class="preco">R$ 4.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Samsung Galaxy S24', 4999)">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprarAgora('Samsung Galaxy S24', 4999)">Comprar</button>
-                </div>
-
-                <div class="produto" data-nome="iphone 13">
-                    <img src="iphone13.jpg" alt="iPhone 13">
-                    <h2>iPhone 13</h2>
-                    <p>Design moderno e desempenho incrível.</p>
-                    <p class="preco">R$ 5.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('iPhone 13', 5999)">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprarAgora('iPhone 13', 5999)">Comprar</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Categoria: Eletrônicos -->
-        <section>
-            <h2>Eletrônicos</h2>
-            <div class="produtos" id="produtos-eletronicos">
-                <div class="produto" data-nome="smart tv samsung 58 4k">
-                    <img src="tv4k.jpg" alt="Smart TV 58' 4K">
-                    <h2>Smart TV Samsung 58" 4K</h2>
-                    <p>Qualidade de imagem cristalina com 4K.</p>
-                    <p class="preco">R$ 3.499,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Smart TV Samsung 58" 4K', 3499)">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprarAgora('Smart TV Samsung 58" 4K', 3499)">Comprar</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Categoria: Computadores -->
+        <!-- Computadores -->
         <section>
             <h2>Computadores</h2>
-            <div class="produtos" id="produtos-computadores">
+            <div class="produtos" id="computadores">
+                <!-- Produtos de computadores -->
                 <div class="produto" data-nome="pc gamer amd ryzen 5">
                     <img src="pcgamer.jpg" alt="PC Gamer AMD Ryzen">
                     <h2>PC Gamer AMD Ryzen 5</h2>
                     <p>Desempenho de elite para jogos.</p>
                     <p class="preco">R$ 6.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('PC Gamer AMD Ryzen 5', 6999)">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprarAgora('PC Gamer AMD Ryzen 5', 6999)">Comprar</button>
                 </div>
-
                 <div class="produto" data-nome="notebook galaxy book4">
                     <img src="notebook.jpg" alt="Notebook Galaxy Book4">
                     <h2>Notebook Galaxy Book4</h2>
                     <p>Potência e portabilidade para o dia a dia.</p>
                     <p class="preco">R$ 7.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Notebook Galaxy Book4', 7999)">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprarAgora('Notebook Galaxy Book4', 7999)">Comprar</button>
+                </div>
+                <div class="produto" data-nome="macbook air m2">
+                    <img src="macbook.jpg" alt="MacBook Air M2">
+                    <h2>MacBook Air M2</h2>
+                    <p>Performance e elegância para profissionais.</p>
+                    <p class="preco">R$ 10.499,00</p>
+                </div>
+                <div class="produto" data-nome="monitor lg ultra wide">
+                    <img src="monitor.jpg" alt="Monitor LG UltraWide">
+                    <h2>Monitor LG UltraWide</h2>
+                    <p>Amplo espaço para multitarefa.</p>
+                    <p class="preco">R$ 1.999,00</p>
+                </div>
+                <div class="produto" data-nome="teclado gamer rgb">
+                    <img src="teclado.jpg" alt="Teclado Gamer RGB">
+                    <h2>Teclado Gamer RGB</h2>
+                    <p>Alta performance com iluminação personalizada.</p>
+                    <p class="preco">R$ 249,00</p>
                 </div>
             </div>
         </section>
 
-        <!-- Categoria: Acessórios -->
+        <!-- Celulares -->
         <section>
-            <h2>Acessórios</h2>
-            <div class="produtos" id="produtos-acessorios">
+            <h2>Celulares</h2>
+            <div class="produtos" id="celulares">
+                <!-- Produtos de celulares -->
+                <div class="produto" data-nome="samsung galaxy s24">
+                    <img src="s24.jpg" alt="Samsung Galaxy S24">
+                    <h2>Samsung Galaxy S24</h2>
+                    <p>O mais novo smartphone da Samsung.</p>
+                    <p class="preco">R$ 4.999,00</p>
+                </div>
+                <div class="produto" data-nome="iphone 13">
+                    <img src="iphone13.jpg" alt="iPhone 13">
+                    <h2>iPhone 13</h2>
+                    <p>Design moderno e desempenho incrível.</p>
+                    <p class="preco">R$ 5.999,00</p>
+                </div>
+                <div class="produto" data-nome="xiaomi redmi note 12">
+                    <img src="redmi12.jpg" alt="Xiaomi Redmi Note 12">
+                    <h2>Xiaomi Redmi Note 12</h2>
+                    <p>Excelente custo-benefício.</p>
+                    <p class="preco">R$ 2.499,00</p>
+                </div>
+                <div class="produto" data-nome="google pixel 7">
+                    <img src="pixel7.jpg" alt="Google Pixel 7">
+                    <h2>Google Pixel 7</h2>
+                    <p>Software otimizado e câmera potente.</p>
+                    <p class="preco">R$ 6.299,00</p>
+                </div>
+                <div class="produto" data-nome="motorola edge 40">
+                    <img src="edge40.jpg" alt="Motorola Edge 40">
+                    <h2>Motorola Edge 40</h2>
+                    <p>Design elegante e desempenho rápido.</p>
+                    <p class="preco">R$ 3.799,00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outros -->
+        <section>
+            <h2>Outros</h2>
+            <div class="produtos" id="outros">
+                <!-- Produtos diversos -->
                 <div class="produto" data-nome="mouse gamer fallen pantera">
                     <img src="mouse.jpg" alt="Mouse Gamer">
                     <h2>Mouse Gamer Fallen Pantera</h2>
                     <p>Precisão e estilo com iluminação RGB.</p>
                     <p class="preco">R$ 199,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Mouse Gamer Fallen Pantera', 199)">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprarAgora('Mouse Gamer Fallen Pantera', 199)">Comprar</button>
                 </div>
-
                 <div class="produto" data-nome="headset qcy h3 bluetooth">
                     <img src="headset.jpg" alt="Headset QCY H3">
                     <h2>Headset QCY H3 Bluetooth</h2>
                     <p>Som imersivo com cancelamento de ruído.</p>
                     <p class="preco">R$ 399,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Headset QCY H3 Bluetooth', 399)">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprarAgora('Headset QCY H3 Bluetooth', 399)">Comprar</button>
+                </div>
+                <div class="produto" data-nome="liquidificador oster full">
+                    <img src="liquidificador.jpg" alt="Liquidificador Oster">
+                    <h2>Liquidificador Oster Full</h2>
+                    <p>Durabilidade e potência para sua cozinha.</p>
+                    <p class="preco">R$ 299,00</p>
+                </div>
+                <div class="produto" data-nome="cafeteira expresso delonghi">
+                    <img src="cafeteira.jpg" alt="Cafeteira Expresso">
+                    <h2>Cafeteira Expresso Delonghi</h2>
+                    <p>Um toque de barista em sua casa.</p>
+                    <p class="preco">R$ 1.299,00</p>
+                </div>
+                <div class="produto" data-nome="smartwatch amazfit gtr">
+                    <img src="smartwatch.jpg" alt="Smartwatch Amazfit GTR">
+                    <h2>Smartwatch Amazfit GTR</h2>
+                    <p>Estilo e funcionalidade no pulso.</p>
+                    <p class="preco">R$ 699,00</p>
                 </div>
             </div>
         </section>
     </main>
 
     <script>
-        let carrinho = [];
-
         function buscarProduto() {
             const searchInput = document.getElementById('search-bar').value.toLowerCase();
             const produtos = document.querySelectorAll('.produto');
@@ -119,15 +144,6 @@
                     produto.style.display = 'none';
                 }
             });
-        }
-
-        function adicionarAoCarrinho(nome, preco) {
-            carrinho.push({ nome, preco });
-            alert(`${nome} foi adicionado ao carrinho.`);
-        }
-
-        function comprarAgora(nome, preco) {
-            alert(`Você comprou: ${nome} por R$ ${preco}`);
         }
     </script>
 </body>
