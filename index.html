@@ -94,6 +94,38 @@
                     <button class="botao" onclick="adicionarAoCarrinho('Headset QCY H3 Bluetooth')">Adicionar ao Carrinho</button>
                     <button class="botao comprar" onclick="comprar('Headset QCY H3 Bluetooth')">Comprar</button>
                 </div>
+                <div class="produto" data-nome="liquidificador oster full">
+                    <img src="liquidificador.jpg" alt="Liquidificador Oster">
+                    <h2>Liquidificador Oster Full</h2>
+                    <p>Durabilidade e potência para sua cozinha.</p>
+                    <p class="preco">R$ 299,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Liquidificador Oster Full')">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprar('Liquidificador Oster Full')">Comprar</button>
+                </div>
+                <div class="produto" data-nome="cafeteira expresso delonghi">
+                    <img src="cafeteira.jpg" alt="Cafeteira Expresso">
+                    <h2>Cafeteira Expresso Delonghi</h2>
+                    <p>Um toque de barista em sua casa.</p>
+                    <p class="preco">R$ 1.299,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Cafeteira Expresso Delonghi')">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprar('Cafeteira Expresso Delonghi')">Comprar</button>
+                </div>
+                <div class="produto" data-nome="smartwatch amazfit gtr">
+                    <img src="smartwatch.jpg" alt="Smartwatch Amazfit GTR">
+                    <h2>Smartwatch Amazfit GTR</h2>
+                    <p>Estilo e funcionalidade no pulso.</p>
+                    <p class="preco">R$ 699,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Smartwatch Amazfit GTR')">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprar('Smartwatch Amazfit GTR')">Comprar</button>
+                </div>
+                <div class="produto" data-nome="ventilador turbo arno">
+                    <img src="ventilador.jpg" alt="Ventilador Turbo Arno">
+                    <h2>Ventilador Turbo Arno</h2>
+                    <p>Conforto térmico com alta eficiência.</p>
+                    <p class="preco">R$ 249,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Ventilador Turbo Arno')">Adicionar ao Carrinho</button>
+                    <button class="botao comprar" onclick="comprar('Ventilador Turbo Arno')">Comprar</button>
+                </div>
             </div>
         </section>
     </main>
@@ -102,16 +134,32 @@
         <p>&copy; 2024 tech nova. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Modal de confirmação -->
-    <div id="modal">
-        <div class="modal-content">
-            <p id="modal-mensagem"></p>
-            <button onclick="fecharModal()">Fechar</button>
-        </div>
-    </div>
-
     <script>
-        // Funções do JavaScript (já fornecidas acima)
+        function buscarProduto() {
+            const searchInput = document.getElementById('search-bar').value.toLowerCase();
+            const produtos = document.querySelectorAll('.produto');
+
+            produtos.forEach(produto => {
+                const nomeProduto = produto.getAttribute('data-nome');
+                if (nomeProduto.includes(searchInput)) {
+                    produto.style.display = 'block';
+                } else {
+                    produto.style.display = 'none';
+                }
+            });
+        }
+
+        function adicionarAoCarrinho(produto) {
+            alert(`"${produto}" foi adicionado ao carrinho!`);
+        }
+
+        function comprar(produto) {
+            alert(`Você comprou "${produto}"!`);
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
