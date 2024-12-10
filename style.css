@@ -1,23 +1,29 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     background-color: #000;
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
-header {
+/* Header e Footer */
+header, footer {
     background-color: #333;
-    padding: 20px;
-    text-align: center;
     color: white;
+    text-align: center;
+    padding: 10px 0;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin: 0;
+/* Conteúdo principal */
+main {
+    flex: 1;
+    padding: 20px;
 }
 
+/* Produtos */
 .produtos {
     display: flex;
     flex-wrap: wrap;
@@ -33,65 +39,37 @@ h1 {
     width: 300px;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .produto img {
     width: 100%;
-    height: auto;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
-.produto h2, .produto p {
-    color: #fff;
+.produto h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #4CAF50;
 }
 
-button.botao {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-button.botao:hover {
-    background-color: #45a049;
-}
-
-#carrinho-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#carrinho {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 50%;
+.produto .preco {
     font-size: 1.5em;
-    cursor: pointer;
-}
-
-#carrinho:hover {
-    background-color: #45a049;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
     color: white;
-    text-align: center;
-    padding: 10px 0
+    font-weight: bold;
+}
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+/* Botão */
+.botao {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    margin-top: 10px;
+}
+
+.botao:hover {
+    background-color: #45a049;
 }
