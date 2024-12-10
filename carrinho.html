@@ -28,7 +28,7 @@
             const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
             const carrinhoContainer = document.getElementById('carrinho-container');
             const totalCompra = document.getElementById('total-compra');
-            
+
             if (carrinho.length === 0) {
                 carrinhoContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
                 totalCompra.textContent = '';
