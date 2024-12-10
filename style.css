@@ -137,3 +137,36 @@ footer.visible {
     display: block; /* Torna o footer visível quando a classe "visible" for adicionada */
 }
 
+#carrinho-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#carrinho {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+#carrinho:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+#contador-carrinho {
+    background-color: white;
+    color: #4CAF50;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 5px;
+}
