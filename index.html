@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Loja</title>
-    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 </head>
@@ -20,7 +19,7 @@
     </header>
 
     <div id="carrinho-container">
-        <button id="carrinho">
+        <button id="carrinho" onclick="redirecionarCarrinho()">
             🛒 <span id="contador-carrinho">0</span>
         </button>
     </div>
@@ -35,25 +34,9 @@
                     <h2>PC Gamer AMD Ryzen 5</h2>
                     <p>Desempenho de elite para jogos.</p>
                     <p class="preco">R$ 6.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('PC Gamer AMD Ryzen 5')">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprar('PC Gamer AMD Ryzen 5')">Comprar</button>
+                    <button class="botao" onclick="adicionarAoCarrinho('PC Gamer AMD Ryzen 5', '6.999,00')">Adicionar ao Carrinho</button>
                 </div>
-                <div class="produto" data-nome="notebook galaxy book4">
-                    <img src="notebook.jpg" alt="Notebook Galaxy Book4">
-                    <h2>Notebook Galaxy Book4</h2>
-                    <p>Potência e portabilidade para o dia a dia.</p>
-                    <p class="preco">R$ 7.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Notebook Galaxy Book4')">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprar('Notebook Galaxy Book4')">Comprar</button>
-                </div>
-                <div class="produto" data-nome="macbook air m2">
-                    <img src="macbook.jpg" alt="MacBook Air M2">
-                    <h2>MacBook Air M2</h2>
-                    <p>Performance e elegância para profissionais.</p>
-                    <p class="preco">R$ 10.499,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('MacBook Air M2')">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprar('MacBook Air M2')">Comprar</button>
-                </div>
+                <!-- Adicione mais produtos conforme necessário -->
             </div>
         </section>
 
@@ -66,16 +49,7 @@
                     <h2>Samsung Galaxy S24</h2>
                     <p>O mais novo smartphone da Samsung.</p>
                     <p class="preco">R$ 4.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Samsung Galaxy S24')">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprar('Samsung Galaxy S24')">Comprar</button>
-                </div>
-                <div class="produto" data-nome="iphone 13">
-                    <img src="iphone13.jpg" alt="iPhone 13">
-                    <h2>iPhone 13</h2>
-                    <p>Design moderno e desempenho incrível.</p>
-                    <p class="preco">R$ 5.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('iPhone 13')">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprar('iPhone 13')">Comprar</button>
+                    <button class="botao" onclick="adicionarAoCarrinho('Samsung Galaxy S24', '4.999,00')">Adicionar ao Carrinho</button>
                 </div>
             </div>
         </section>
@@ -89,16 +63,7 @@
                     <h2>Mouse Gamer Fallen Pantera</h2>
                     <p>Precisão e estilo com iluminação RGB.</p>
                     <p class="preco">R$ 199,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Mouse Gamer Fallen Pantera')">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprar('Mouse Gamer Fallen Pantera')">Comprar</button>
-                </div>
-                <div class="produto" data-nome="headset qcy h3 bluetooth">
-                    <img src="headset.jpg" alt="Headset QCY H3">
-                    <h2>Headset QCY H3 Bluetooth</h2>
-                    <p>Som imersivo com cancelamento de ruído.</p>
-                    <p class="preco">R$ 399,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Headset QCY H3 Bluetooth')">Adicionar ao Carrinho</button>
-                    <button class="botao comprar" onclick="comprar('Headset QCY H3 Bluetooth')">Comprar</button>
+                    <button class="botao" onclick="adicionarAoCarrinho('Mouse Gamer Fallen Pantera', '199,00')">Adicionar ao Carrinho</button>
                 </div>
             </div>
         </section>
@@ -109,6 +74,7 @@
     </footer>
 
     <script>
+        let carrinho = [];
         let contadorCarrinho = 0;
 
         function buscarProduto() {
@@ -125,23 +91,20 @@
             });
         }
 
-        function adicionarAoCarrinho(produto) {
-            alert(`"${produto}" foi adicionado ao carrinho!`);
+        function adicionarAoCarrinho(produto, preco) {
+            carrinho.push({ produto, preco });
             contadorCarrinho++;
-            atualizarContadorCarrinho();
+            atualizarCarrinho();
         }
 
-        function comprar(produto) {
-            alert(`Você comprou "${produto}"!`);
-        }
-
-        function atualizarContadorCarrinho() {
+        function atualizarCarrinho() {
             const contador = document.getElementById('contador-carrinho');
             contador.textContent = contadorCarrinho;
         }
 
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        function redirecionarCarrinho() {
+            // Redireciona para outra página (carrinho.html)
+            window.location.href = 'carrinho.html';
         }
     </script>
 </body>
