@@ -1,126 +1,144 @@
-body {
-    font-family: 'Roboto', sans-serif;
+
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
+/* Fonte padrão */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo do cabeçalho */
 header {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    margin: 0;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-size: 2em;
 }
 
-nav {
-    margin-top: 20px;
+header nav {
+    margin: 20px 0;
 }
 
-nav .botao {
-    padding: 10px 20px;
-    margin: 0 10px;
-    background-color: #ff6347;
+header button, #carrinho {
+    background-color: #008CBA;
     color: white;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-}
-
-input#search-bar {
-    margin-top: 20px;
-    padding: 10px;
-    width: 300px;
     font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-#carrinho-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+header button:hover, #carrinho:hover {
+    background-color: #007b8c;
 }
 
-#carrinho {
-    background-color: #ff6347;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
+#search-bar {
+    padding: 10px;
+    font-size: 16px;
+    width: 60%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
+/* Estilo dos produtos */
 .produtos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 20px;
 }
 
 .produto {
     background-color: white;
-    border: 1px solid #ddd;
-    margin: 10px;
-    padding: 20px;
-    width: 200px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.2s ease;
 }
 
 .produto img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-.produto h2 {
-    font-size: 18px;
-    margin: 10px 0;
+.produto:hover {
+    transform: translateY(-10px);
 }
 
-.produto .preco {
-    font-size: 16px;
-    color: green;
-}
-
-button.botao {
-    background-color: #28a745;
+/* Botões */
+.botao {
+    background-color: #008CBA;
     color: white;
     padding: 10px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
 }
 
-button.botao:hover {
-    background-color: #218838;
+.botao:hover {
+    background-color: #007b8c;
 }
 
+.finalizar {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Carrinho */
+#carrinho-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+#contador-carrinho {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Carrinho de Compras */
 #carrinho-compras {
     padding: 20px;
-    margin-top: 40px;
-    background-color: #fff;
-    border-top: 2px solid #ddd;
-}
-
-#lista-carrinho p {
-    font-size: 16px;
-    margin: 5px 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
 }
 
 #total-compra {
-    font-size: 18px;
     margin-top: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
+/* Footer */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto; /* Faz o footer ir para o final */
 }
