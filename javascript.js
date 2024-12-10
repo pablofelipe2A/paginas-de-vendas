@@ -61,10 +61,6 @@ function finalizarCompra() {
     }
 }
 
-function comprar(produto, preco) {
-    alert(`Você comprou "${produto}" por R$ ${preco}!`);
-}
-
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
