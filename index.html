@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Loja</title>
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -19,94 +20,98 @@
     </header>
 
     <div id="carrinho-container">
-        <button id="carrinho" onclick="window.location.href = 'carrinho.html'">
+        <button id="carrinho" onclick="scrollToSection('carrinho-compras')">
             🛒 <span id="contador-carrinho">0</span>
         </button>
     </div>
 
     <main>
+        <!-- Computadores -->
         <section>
             <h2>Computadores</h2>
             <div class="produtos" id="computadores">
-                <!-- Adicione mais produtos aqui -->
                 <div class="produto" data-nome="pc gamer amd ryzen 5">
                     <img src="pcgamer.jpg" alt="PC Gamer AMD Ryzen">
                     <h2>PC Gamer AMD Ryzen 5</h2>
                     <p>Desempenho de elite para jogos.</p>
                     <p class="preco">R$ 6.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('PC Gamer AMD Ryzen 5', '6.999,00', 'pcgamer.jpg')">Adicionar ao Carrinho</button>
+                    <button class="botao" onclick="adicionarAoCarrinho('PC Gamer AMD Ryzen 5', '6.999,00')">Adicionar ao Carrinho</button>
                 </div>
-                <div class="produto" data-nome="pc gamer intel i7">
-                    <img src="pcintel.jpg" alt="PC Gamer Intel i7">
-                    <h2>PC Gamer Intel i7</h2>
-                    <p>Potência máxima para games e multitarefas.</p>
-                    <p class="preco">R$ 5.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('PC Gamer Intel i7', '5.999,00', 'pcintel.jpg')">Adicionar ao Carrinho</button>
+                <!-- Novos produtos -->
+                <div class="produto" data-nome="macbook pro">
+                    <img src="macbook.jpg" alt="Macbook Pro">
+                    <h2>MacBook Pro</h2>
+                    <p>Potência e performance para criadores.</p>
+                    <p class="preco">R$ 15.999,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('MacBook Pro', '15.999,00')">Adicionar ao Carrinho</button>
                 </div>
-                <div class="produto" data-nome="laptop hp 15">
-                    <img src="laptop.jpg" alt="Laptop HP 15">
-                    <h2>Laptop HP 15</h2>
-                    <p>Notebook leve e portátil, ideal para o dia a dia.</p>
-                    <p class="preco">R$ 2.799,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Laptop HP 15', '2.799,00', 'laptop.jpg')">Adicionar ao Carrinho</button>
+                <div class="produto" data-nome="notebook hp">
+                    <img src="notebook.jpg" alt="Notebook HP">
+                    <h2>Notebook HP</h2>
+                    <p>Alta performance em qualquer tarefa.</p>
+                    <p class="preco">R$ 3.999,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Notebook HP', '3.999,00')">Adicionar ao Carrinho</button>
                 </div>
             </div>
         </section>
 
+        <!-- Celulares -->
         <section>
             <h2>Celulares</h2>
             <div class="produtos" id="celulares">
-                <!-- Adicione mais celulares aqui -->
                 <div class="produto" data-nome="samsung galaxy s24">
                     <img src="s24.jpg" alt="Samsung Galaxy S24">
                     <h2>Samsung Galaxy S24</h2>
                     <p>O mais novo smartphone da Samsung.</p>
                     <p class="preco">R$ 4.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Samsung Galaxy S24', '4.999,00', 's24.jpg')">Adicionar ao Carrinho</button>
+                    <button class="botao" onclick="adicionarAoCarrinho('Samsung Galaxy S24', '4.999,00')">Adicionar ao Carrinho</button>
                 </div>
-                <div class="produto" data-nome="iphone 15 pro">
-                    <img src="iphone15.jpg" alt="iPhone 15 Pro">
-                    <h2>iPhone 15 Pro</h2>
-                    <p>O melhor do iPhone, com performance de alto nível.</p>
-                    <p class="preco">R$ 8.499,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('iPhone 15 Pro', '8.499,00', 'iphone15.jpg')">Adicionar ao Carrinho</button>
-                </div>
-                <div class="produto" data-nome="xiaomi redmi note 13">
-                    <img src="xiaomi.jpg" alt="Xiaomi Redmi Note 13">
-                    <h2>Xiaomi Redmi Note 13</h2>
-                    <p>Smartphone com excelente custo-benefício.</p>
-                    <p class="preco">R$ 2.299,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Xiaomi Redmi Note 13', '2.299,00', 'xiaomi.jpg')">Adicionar ao Carrinho</button>
+                <div class="produto" data-nome="iphone 13">
+                    <img src="iphone13.jpg" alt="iPhone 13">
+                    <h2>iPhone 13</h2>
+                    <p>Desempenho de ponta com iOS.</p>
+                    <p class="preco">R$ 6.599,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('iPhone 13', '6.599,00')">Adicionar ao Carrinho</button>
                 </div>
             </div>
         </section>
 
+        <!-- Outros -->
         <section>
             <h2>Outros</h2>
             <div class="produtos" id="outros">
-                <!-- Adicione mais produtos aqui -->
                 <div class="produto" data-nome="mouse gamer fallen pantera">
                     <img src="mouse.jpg" alt="Mouse Gamer">
                     <h2>Mouse Gamer Fallen Pantera</h2>
                     <p>Precisão e estilo com iluminação RGB.</p>
                     <p class="preco">R$ 199,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Mouse Gamer Fallen Pantera', '199,00', 'mouse.jpg')">Adicionar ao Carrinho</button>
+                    <button class="botao" onclick="adicionarAoCarrinho('Mouse Gamer Fallen Pantera', '199,00')">Adicionar ao Carrinho</button>
                 </div>
-                <div class="produto" data-nome="teclado mecânico corsair">
-                    <img src="teclado.jpg" alt="Teclado Corsair">
-                    <h2>Teclado Mecânico Corsair</h2>
-                    <p>Teclado de alta performance para gamers.</p>
-                    <p class="preco">R$ 599,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Teclado Mecânico Corsair', '599,00', 'teclado.jpg')">Adicionar ao Carrinho</button>
+                <div class="produto" data-nome="headset">
+                    <img src="headset.jpg" alt="Headset">
+                    <h2>Headset Gamer</h2>
+                    <p>Som imersivo para games.</p>
+                    <p class="preco">R$ 299,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Headset Gamer', '299,00')">Adicionar ao Carrinho</button>
                 </div>
-                <div class="produto" data-nome="headset logitech">
-                    <img src="headset.jpg" alt="Headset Logitech">
-                    <h2>Headset Logitech</h2>
-                    <p>Som imersivo e microfone de qualidade.</p>
-                    <p class="preco">R$ 399,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Headset Logitech', '399,00', 'headset.jpg')">Adicionar ao Carrinho</button>
+                <div class="produto" data-nome="cafeteira">
+                    <img src="cafeteirajpg.jpg" alt="Cafeteira">
+                    <h2>Cafeteira Expresso</h2>
+                    <p>Perfeita para seu café diário.</p>
+                    <p class="preco">R$ 299,00</p>
+                    <button class="botao" onclick="adicionarAoCarrinho('Cafeteira Expresso', '299,00')">Adicionar ao Carrinho</button>
                 </div>
             </div>
+        </section>
+
+        <!-- Carrinho de Compras -->
+        <section id="carrinho-compras">
+            <h2>Carrinho de Compras</h2>
+            <div id="lista-carrinho">
+                <p>Seu carrinho está vazio.</p>
+            </div>
+            <div id="total-compra"></div>
+            <button class="botao finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
         </section>
     </main>
 
@@ -132,10 +137,8 @@
             });
         }
 
-        function adicionarAoCarrinho(produto, preco, imagem) {
-            // Adiciona o item ao carrinho
-            carrinho.push({ produto, preco, imagem });
-            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        function adicionarAoCarrinho(produto, preco) {
+            carrinho.push({ produto, preco });
             contadorCarrinho++;
             atualizarCarrinho();
         }
@@ -143,13 +146,42 @@
         function atualizarCarrinho() {
             const contador = document.getElementById('contador-carrinho');
             contador.textContent = contadorCarrinho;
+
+            const listaCarrinho = document.getElementById('lista-carrinho');
+            listaCarrinho.innerHTML = "";
+
+            carrinho.forEach(item => {
+                const itemCarrinho = document.createElement('p');
+                itemCarrinho.textContent = `${item.produto} - R$ ${item.preco}`;
+                listaCarrinho.appendChild(itemCarrinho);
+            });
+
+            calcularTotal();
+        }
+
+        function calcularTotal() {
+            const totalCompra = document.getElementById('total-compra');
+            const total = carrinho.reduce((soma, item) => {
+                return soma + parseFloat(item.preco.replace('.', '').replace(',', '.'));
+            }, 0);
+
+            totalCompra.textContent = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function finalizarCompra() {
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio!');
+            } else {
+                alert('Compra finalizada com sucesso!');
+                carrinho = [];
+                contadorCarrinho = 0;
+                atualizarCarrinho();
+            }
         }
 
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
-
-        window.onload = atualizarCarrinho;
     </script>
 </body>
 </html>
