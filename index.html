@@ -3,70 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Loja</title>
+    <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Minha Loja</h1>
-        <nav>
-            <button class="botao" onclick="scrollToSection('computadores')">Computadores</button>
-            <button class="botao" onclick="scrollToSection('celulares')">Celulares</button>
-            <button class="botao" onclick="scrollToSection('outros')">Outros</button>
-        </nav>
-        <input type="text" id="search-bar" placeholder="Buscar produtos..." oninput="buscarProduto()">
+        <h1>Carrinho de Compras</h1>
     </header>
 
-    <div id="carrinho-container">
-        <button id="carrinho" onclick="redirecionarCarrinho()">
-            🛒 <span id="contador-carrinho">0</span>
-        </button>
-    </div>
-
     <main>
-        <!-- Computadores -->
-        <section>
-            <h2>Computadores</h2>
-            <div class="produtos" id="computadores">
-                <div class="produto" data-nome="pc gamer amd ryzen 5">
-                    <img src="pcgamer.jpg" alt="PC Gamer AMD Ryzen">
-                    <h2>PC Gamer AMD Ryzen 5</h2>
-                    <p>Desempenho de elite para jogos.</p>
-                    <p class="preco">R$ 6.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('PC Gamer AMD Ryzen 5', '6.999,00')">Adicionar ao Carrinho</button>
-                </div>
-                <!-- Adicione mais produtos conforme necessário -->
-            </div>
-        </section>
-
-        <!-- Celulares -->
-        <section>
-            <h2>Celulares</h2>
-            <div class="produtos" id="celulares">
-                <div class="produto" data-nome="samsung galaxy s24">
-                    <img src="s24.jpg" alt="Samsung Galaxy S24">
-                    <h2>Samsung Galaxy S24</h2>
-                    <p>O mais novo smartphone da Samsung.</p>
-                    <p class="preco">R$ 4.999,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Samsung Galaxy S24', '4.999,00')">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Outros -->
-        <section>
-            <h2>Outros</h2>
-            <div class="produtos" id="outros">
-                <div class="produto" data-nome="mouse gamer fallen pantera">
-                    <img src="mouse.jpg" alt="Mouse Gamer">
-                    <h2>Mouse Gamer Fallen Pantera</h2>
-                    <p>Precisão e estilo com iluminação RGB.</p>
-                    <p class="preco">R$ 199,00</p>
-                    <button class="botao" onclick="adicionarAoCarrinho('Mouse Gamer Fallen Pantera', '199,00')">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-        </section>
+        <div id="carrinho-container">
+            <!-- Lista de itens do carrinho será preenchida aqui -->
+        </div>
+        <div id="total-compra"></div>
+        <button class="botao finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
     </main>
 
     <footer>
@@ -74,38 +24,42 @@
     </footer>
 
     <script>
-        let carrinho = [];
-        let contadorCarrinho = 0;
+        function carregarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const carrinhoContainer = document.getElementById('carrinho-container');
+            const totalCompra = document.getElementById('total-compra');
+            
+            if (carrinho.length === 0) {
+                carrinhoContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
+                totalCompra.textContent = '';
+                return;
+            }
 
-        function buscarProduto() {
-            const searchInput = document.getElementById('search-bar').value.toLowerCase();
-            const produtos = document.querySelectorAll('.produto');
+            let total = 0;
+            carrinho.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('produto');
+                itemDiv.innerHTML = `
+                    <img src="${item.imagem}" alt="${item.produto}">
+                    <h2>${item.produto}</h2>
+                    <p>R$ ${item.preco}</p>
+                    <p>Quantidade: 1</p>
+                `;
+                carrinhoContainer.appendChild(itemDiv);
 
-            produtos.forEach(produto => {
-                const nomeProduto = produto.getAttribute('data-nome');
-                if (nomeProduto.includes(searchInput)) {
-                    produto.style.display = 'block';
-                } else {
-                    produto.style.display = 'none';
-                }
+                total += parseFloat(item.preco.replace('.', '').replace(',', '.'));
             });
+
+            totalCompra.textContent = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
         }
 
-        function adicionarAoCarrinho(produto, preco) {
-            carrinho.push({ produto, preco });
-            contadorCarrinho++;
-            atualizarCarrinho();
+        function finalizarCompra() {
+            alert('Compra finalizada com sucesso!');
+            localStorage.removeItem('carrinho');
+            window.location.href = 'index.html'; // Redireciona de volta para a página principal
         }
 
-        function atualizarCarrinho() {
-            const contador = document.getElementById('contador-carrinho');
-            contador.textContent = contadorCarrinho;
-        }
-
-        function redirecionarCarrinho() {
-            // Redireciona para outra página (carrinho.html)
-            window.location.href = 'carrinho.html';
-        }
+        window.onload = carregarCarrinho;
     </script>
 </body>
 </html>
