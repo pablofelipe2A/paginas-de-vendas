@@ -1,17 +1,16 @@
-/* Estilo geral */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Fundo preto */
-    color: white; /* Cor do texto em branco */
+    background-color: #000;
+    color: white;
 }
 
 header {
-    background-color: #333; /* Cor escura, mas mais suave que o fundo preto */
+    background-color: #333;
     padding: 20px;
     text-align: center;
-    color: #fff; /* Cor do texto no cabeçalho */
+    color: white;
 }
 
 h1 {
@@ -19,26 +18,6 @@ h1 {
     margin: 0;
 }
 
-nav {
-    margin-top: 10px;
-}
-
-nav .botao {
-    background-color: #4CAF50; /* Cor de botão verde para contraste */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    border: none;
-}
-
-nav .botao:hover {
-    background-color: #45a049;
-}
-
-/* Estilo dos produtos */
 .produtos {
     display: flex;
     flex-wrap: wrap;
@@ -48,7 +27,7 @@ nav .botao:hover {
 }
 
 .produto {
-    background-color: #222; /* Fundo mais escuro para os produtos */
+    background-color: #222;
     border: 1px solid #444;
     border-radius: 5px;
     width: 300px;
@@ -61,80 +40,24 @@ nav .botao:hover {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    display: block; /* Para alinhar ao centro */
-    margin-left: auto; /* Centraliza horizontalmente */
-    margin-right: auto;
-    margin-bottom: 10px; /* Espaçamento entre a imagem e o texto */
+    margin-bottom: 10px;
 }
 
-.produto h2 {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #4CAF50;
+.produto h2, .produto p {
+    color: #fff;
 }
 
-.produto p {
-    color: #ccc;
-    margin: 10px 0;
-}
-
-.produto .preco {
-    font-size: 1.5em;
-    color: #fff; /* Preço em branco */
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-/* Botões nos produtos */
-.produto .botao {
+button.botao {
     background-color: #4CAF50;
     color: white;
-    font-size: 1.1em; /* Aumentar tamanho da fonte */
-    padding: 15px 20px; /* Aumentar tamanho dos botões */
-    border-radius: 8px;
-    margin: 5px 0; /* Espaçamento entre os botões */
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
 }
 
-.produto .botao:hover {
+button.botao:hover {
     background-color: #45a049;
-}
-
-.produto .botao.comprar {
-    background-color: #ff9800;
-    color: white;
-}
-
-.produto .botao.comprar:hover {
-    background-color: #e68900;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    #search-bar {
-        width: 80%;
-    }
-
-    .produto {
-        width: 100%;
-        margin: 10px 0;
-    }
-}
-
-/* Estilo do footer */
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #333; /* Fundo do footer em cinza escuro */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    display: none; /* Inicialmente o footer estará escondido */
-    transition: transform 0.3s;
-}
-
-footer.visible {
-    display: block; /* Torna o footer visível quando a classe "visible" for adicionada */
 }
 
 #carrinho-container {
@@ -152,21 +75,17 @@ footer.visible {
     border-radius: 50%;
     font-size: 1.5em;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, background-color 0.3s;
 }
 
 #carrinho:hover {
     background-color: #45a049;
-    transform: scale(1.1);
 }
 
-#contador-carrinho {
-    background-color: white;
-    color: #4CAF50;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 1em;
-    font-weight: bold;
-    margin-left: 5px;
-}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0
