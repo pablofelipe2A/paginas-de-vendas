@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Carrinho de Compras</h1>
+    </header>
+
+    <main>
+        <div id="carrinho-container">
+            <!-- Lista de itens do carrinho será preenchida aqui -->
+        </div>
+        <div id="total-compra"></div>
+        <button class="botao finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 tech nova. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function carregarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const carrinhoContainer = document.getElementById('carrinho-container');
+            const totalCompra = document.getElementById('total-compra');
+            
+            if (carrinho.length === 0) {
+                carrinhoContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
+                totalCompra.textContent = '';
+                return;
+            }
+
+            let total = 0;
+            carrinho.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('produto');
+                itemDiv.innerHTML = `
+                    <img src="${item.imagem}" alt="${item.produto}">
+                    <h2>${item.produto}</h2>
+                    <p>R$ ${item.preco}</p>
+                    <p>Quantidade: 1</p>
+                `;
+                carrinhoContainer.appendChild(itemDiv);
+
+                total += parseFloat(item.preco.replace('.', '').replace(',', '.'));
+            });
+
+            totalCompra.textContent = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function finalizarCompra() {
+            alert('Compra finalizada com sucesso!');
+            localStorage.removeItem('carrinho');
+            window.location.href = 'index.html'; // Redireciona de volta para a página principal
+        }
+
+        window.onload = carregarCarrinho;
+    </script>
+</body>
+</html>
