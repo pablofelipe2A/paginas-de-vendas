@@ -81,3 +81,44 @@ function finalizarCompra() {
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
+function removerDoCarrinho(index) {
+    carrinho.splice(index, 1); // Remove o item pelo índice
+    contadorCarrinho--;
+    atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+    const contador = document.getElementById('contador-carrinho');
+    contador.textContent = contadorCarrinho;
+
+    const listaCarrinho = document.getElementById('lista-carrinho');
+    listaCarrinho.innerHTML = "";
+
+    if (carrinho.length === 0) {
+        listaCarrinho.innerHTML = "<p>Seu carrinho está vazio.</p>";
+        return;
+    }
+
+    carrinho.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.style.display = "flex";
+        itemDiv.style.justifyContent = "space-between";
+        itemDiv.style.alignItems = "center";
+
+        const itemCarrinho = document.createElement('span');
+        itemCarrinho.textContent = `${item.produto} - R$ ${item.preco}`;
+
+        const botaoRemover = document.createElement('button');
+        botaoRemover.textContent = "Remover";
+        botaoRemover.className = "botao";
+        botaoRemover.style.backgroundColor = "#f44336";
+        botaoRemover.style.marginLeft = "10px";
+        botaoRemover.onclick = () => removerDoCarrinho(index);
+
+        itemDiv.appendChild(itemCarrinho);
+        itemDiv.appendChild(botaoRemover);
+        listaCarrinho.appendChild(itemDiv);
+    });
+
+    calcularTotal();
+}
