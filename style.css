@@ -141,3 +141,25 @@ footer {
     text-align: center;
     margin-top: auto; /* Faz o footer ir para o final */
 }
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.botao-remover {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-remover:hover {
+    background-color: #d32f2f;
+}

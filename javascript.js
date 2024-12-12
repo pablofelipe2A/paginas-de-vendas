@@ -31,14 +31,31 @@ function atualizarCarrinho() {
     if (carrinho.length === 0) {
         listaCarrinho.innerHTML = "<p>Seu carrinho está vazio.</p>";
     } else {
-        carrinho.forEach(item => {
-            const itemCarrinho = document.createElement('p');
-            itemCarrinho.textContent = `${item.produto} - R$ ${item.preco}`;
+        carrinho.forEach((item, index) => {
+            const itemCarrinho = document.createElement('div');
+            itemCarrinho.className = 'item-carrinho';
+
+            const descricao = document.createElement('p');
+            descricao.textContent = `${item.produto} - R$ ${item.preco}`;
+            itemCarrinho.appendChild(descricao);
+
+            const botaoRemover = document.createElement('button');
+            botaoRemover.textContent = 'Remover';
+            botaoRemover.className = 'botao-remover';
+            botaoRemover.onclick = () => removerDoCarrinho(index);
+            itemCarrinho.appendChild(botaoRemover);
+
             listaCarrinho.appendChild(itemCarrinho);
         });
     }
 
     calcularTotal();
+}
+
+function removerDoCarrinho(index) {
+    carrinho.splice(index, 1); // Remove o item do carrinho
+    contadorCarrinho--;
+    atualizarCarrinho(); // Atualiza o carrinho na interface
 }
 
 function calcularTotal() {
